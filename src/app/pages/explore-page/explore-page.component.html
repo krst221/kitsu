@@ -1,1 +1,17 @@
-<p>explore-page works!</p>
+<div class="c-grid">
+  <div class="c-grid--animes">
+    <p>Animes populares esta semana</p>
+    <app-gallery [animes]="trend"></app-gallery>
+    <p>Animes más populares en emisión</p>
+    <app-gallery [animes]="broad"></app-gallery>
+    <p>Animes más esperados</p>
+    <app-gallery [animes]="awaited"></app-gallery>
+    <p>Animes mejor evaluados</p>
+    <app-gallery [animes]="rated"></app-gallery>
+    <p>Animes más populares</p>
+    <app-gallery [animes]="popular"></app-gallery>
+  </div>
+  <div class="c-grid--cate">
+    <app-categories [categories]="categories"></app-categories>
+  </div>
+</div>
