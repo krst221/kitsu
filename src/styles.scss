@@ -25,6 +25,62 @@
     float: left;
     margin: 0px 20px;
   }
+}
+
+.c-gallery {
+  display: flex;
+  justify-content: space-between;
+
+  &--poster {
+    margin: 5px;
+    width: 150px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.c-grid {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  &--animes {
+    margin: 20px;
+  }
+
+  &--cate{
+    padding: 20px;
+    position: sticky;
+    display: block;
+    margin-bottom: .75rem;
+    border-radius: .25rem;
+    top: 65px;
+    margin: 20px;
+    min-width: 30%;
+  }
+
+}
+
+.c-cate {
 
 
+  &--list {
+    display: block;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+    padding-left: 0;
+    margin-bottom: 42px;
+    font-size: 12px;
+    font-weight: 600;
+    list-style: none;
+
+    li {
+      min-width: 50%;
+      color: #464646;
+    }
+  }
 }
