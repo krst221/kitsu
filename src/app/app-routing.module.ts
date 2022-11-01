@@ -14,6 +14,10 @@ const routes: Routes = [
     path: 'anime', loadChildren: () =>
     import('./pages/anime-page/anime-page.module').then(m => m.AnimePageModule)
   },
+  {
+    path: 'anime/:name', loadChildren: () =>
+    import('./pages/detail-page/detail-page.module').then(m => m.DetailPageModule)
+  },
 ];
 
 @NgModule({

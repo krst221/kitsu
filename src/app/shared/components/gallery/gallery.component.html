@@ -1,5 +1,16 @@
 <div class="c-gallery">
-  <div class="c-gallery--poster" *ngFor="let anime of animes">
+  <div class="c-gallery--poster" *ngFor="let anime of animes" [ngbPopover]="popupContent" container="body" (mouseover)="isHover(anime.id)" (mouseout)="isNotHover()" triggers="mouseenter:mouseleave" placement="right">
+    <ng-template #popupContent>
+      <div class="c-gallery--title">
+        <h2>{{anime.attributes.titles.en_jp}}</h2>
+        <h3>{{anime.attributes.startDate | date:'y'}}</h3>
+        <h3>{{anime.attributes.averageRating}}%</h3>
+        <h4>#{{anime.attributes.popularityRank}} en popularidad</h4>
+        <h4>#{{anime.attributes.ratingRank}} en puntaje</h4>
+        <h4>{{anime.attributes.synopsis}}</h4>
+      </div>
+    </ng-template>
     <img src="{{anime.attributes.posterImage.medium}}" alt="">
+    <button *ngIf="id == anime.id " (click)="getDetail(anime)">Ver detalles</button>
   </div>
 </div>

@@ -1,0 +1,11 @@
+<div class="c-anidet">
+  <ul>
+    <li *ngFor="let title of sortByText(anime.attributes.titles | keyvalue)"><strong>{{title[0]}}</strong><span>{{title[1]}}</span></li>
+    <li><strong>Sinónimos</strong><span>{{anime.attributes.abbreviatedTitles}}</span></li>
+    <li><strong>Tipo</strong><span>{{anime.attributes.subtype}}</span></li>
+    <li *ngIf="anime.attributes.episodeCount"><strong>Episodios</strong><span>{{anime.attributes.episodeCount}}</span></li>
+    <li><strong>Estado</strong><span>{{getStatus(anime.attributes.status)}}</span></li>
+    <li><strong>Emitido</strong><span [ngStyle]="{'margin-right': '1px'}">{{anime.attributes.startDate | date:'MMM. dd, y' | lowercase}}</span><span *ngIf="anime.attributes.endDate" [ngStyle]="{'margin-left': '0px'}"> to {{anime.attributes.endDate | date:'MMM. dd, y' | lowercase}}</span></li>
+    <li><strong>Temporada</strong><span>{{getSeason(anime.attributes.startDate | date:'MMMM')}} {{anime.attributes.startDate | date:'Y'}}</span></li>
+  </ul>
+</div>

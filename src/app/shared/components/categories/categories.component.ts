@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-categories',
@@ -9,9 +10,9 @@ export class CategoriesComponent implements OnInit {
 
   @Input() categories?: any[];
 
-  constructor() { }
-
   ngOnInit(): void {
   }
+
+  constructor() { }
 
 }

@@ -4,48 +4,177 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: Asap;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Asap,sans-serif;
+  font-weight: 700;
+}
+
+h5 {
+  font-size: 14px;
+  border-bottom: 1px solid rgba(0,0,0,.09);
+}
+
+h6 {
+  font-size: 1rem;
+  margin-left: 6px;
 }
 
 .c-header {
   display: flex;
   justify-content: center;
-
-  a {
-    text-decoration: none;
-    color: black;
-  }
+  width: 100%;
+  background-color: rgb(80, 80, 80);
+  position: sticky;
+  z-index: 1;
+  top: 0;
 
   ul {
     list-style-type: none;
-    padding: 10px;
+    padding-top: 10px;
   }
 
   li {
     float: left;
     margin: 0px 20px;
+    font-size: 12px;
+    font-family: Asap, sans-serif;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+.popover {
+  background-color: #464646 !important;
+  height: 230px;
+  animation: fadeIn 1s;
+  border-radius: 2px !important;
+  overflow: hidden;
+
+  @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
   }
 }
 
 .c-gallery {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 30px;
+  position: relative;
+
+  &--title {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+
+    h2 {
+      margin-top: 7px;
+      color: rgb(196, 199, 247);
+      font-size: 1rem !important;
+    }
+
+    h3 {
+      color: rgb(145, 128, 128);
+      font-size: 1rem !important;
+      margin: 10px;
+    }
+
+    h4 {
+      color: rgb(233, 223, 223);
+      font-size: 0.7rem !important;
+      margin: 10px;
+      text-align: left;
+    }
+
+  }
 
   &--poster {
     margin: 5px;
     width: 150px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    position: relative;
     overflow: hidden;
+    align-items: center;
+
+    button {
+      position: absolute;
+      bottom: 5px;
+      padding: 8px;
+      font-size: 11px;
+      background-color: #16a085;
+      color: #FFF;
+      box-shadow: 0 0 0 transparent;
+      letter-spacing: .05em;
+      transition: all .2s ease;
+      font-family: Asap,sans-serif;
+      width: 90% !important;
+      font-weight: 400;
+      line-height: 1.25;
+      text-align: center;
+      white-space: nowrap;
+      margin: 4px;
+      cursor: pointer;
+      user-select: none;
+      border: 1px solid transparent;
+      border-radius: .25rem;
+      display: inline-block;
+      vertical-align: middle;
+      touch-action: manipulation;
+      overflow: visible;
+
+      &:hover {
+        transform: scale(1.4);
+      }
+    }
+
+    &:hover {
+      filter: brightness(80%);
+    }
 
     img {
       width: 100%;
+      vertical-align: bottom;
+      overflow: hidden;
+    }
+  }
+
+  &--data {
+    background-color: #464646;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    left: 150px;
+    animation: fadeIn 1s;
+
+    @keyframes fadeIn {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
     }
   }
 }
 
 .c-grid {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
+  margin: auto;
 
   &--animes {
     margin: 20px;
@@ -57,30 +186,141 @@
     display: block;
     margin-bottom: .75rem;
     border-radius: .25rem;
+    height: 600px;
     top: 65px;
     margin: 20px;
-    min-width: 30%;
+    background: #FFF;
+    color: #464646;
+    box-shadow: 0 1px 4px rgba(0,0,0,.04);
+    border: 1px solid rgba(0,0,0,.09);
   }
-
 }
 
 .c-cate {
+  width: 250px;
+
+
+  h5 {
+    font-size: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0,0,0,.09);
+    font-family: Asap,sans-serif;
+    font-weight: 700;
+    margin-bottom: .5rem;
+    line-height: 1.1;
+    color: inherit;
+    text-transform: uppercase !important;
+  }
 
 
   &--list {
-    display: block;
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 0;
-    padding-left: 0;
-    margin-bottom: 42px;
-    font-size: 12px;
-    font-weight: 600;
+    padding: 1px;
+    margin: 22px 0px;
     list-style: none;
+    border-bottom: 1px solid rgba(0,0,0,.09) !important;
+
+    p {
+      font-size: 12px;
+      font-weight: 600;
+    }
 
     li {
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+      font-size: 12px;
+      font-weight: 600;
       min-width: 50%;
       color: #464646;
+
+      a {
+        font-size: inherit;
+        text-decoration: none;
+        color: black;
+      }
     }
   }
 }
+
+.c-dh {
+  display: block;
+  width: 100%;
+  filter: brightness(50%);
+  z-index: -1;
+  height: 60vh;
+  background-position: center;
+  background-size: cover;
+}
+
+.c-detail {
+  margin-top: 20px;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  width: 90vw;
+
+  img {
+    width: 200px;
+    position: absolute;
+    top: -130px;
+    left: 6vw;
+    z-index: 999;
+    margin: 20px;
+  }
+
+  &--text {
+    margin: 20px;
+    width: 40%;
+
+    h1 {
+      font-size: 24px;
+    }
+
+    h3 {
+      font-size: 22px;
+    }
+
+    h4 {
+      white-space: pre-line;
+      overflow-wrap: break-word;
+      overflow-y: hidden;
+      font-size: 20px;
+    }
+  }
+}
+
+.c-anidet {
+  padding: 1px;
+  margin: 22px 0px;
+  list-style: none;
+  width: 20vw;
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1px;
+    list-style: none;
+  }
+
+  li {
+    font-size: 12px;
+    white-space: wrap;
+    text-overflow: ellipsis;
+    width: 250px;
+    margin: 5px;
+  }
+
+  span {
+    margin: 0px 10px;
+    font-size: 12px !important;
+    white-space: wrap;
+    text-overflow: ellipsis;
+  }
+
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
