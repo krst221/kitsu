@@ -6,6 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class AnimeService {
 
+  anime: any;
+
   constructor(private http: HttpClient) { }
 
   getTrendingAnime() {

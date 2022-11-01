@@ -1,0 +1,11 @@
+<app-detail-header [anime]="anime"></app-detail-header>
+<div class="c-detail">
+  <div class="c-detail--text">
+    <img src="{{anime?.attributes.posterImage.medium}}" alt="">
+    <h1>{{anime?.attributes.titles.en_jp}}</h1>
+    <h3>{{anime?.attributes.startDate | date:'y'}}</h3>
+    <h3>{{anime?.attributes.averageRating}}% de aprobación por la comunidad</h3>
+    <h4>{{anime?.attributes.synopsis}}</h4>
+  </div>
+  <app-anime-details [anime]="anime"></app-anime-details>
+</div>
