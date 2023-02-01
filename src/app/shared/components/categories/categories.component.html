@@ -1,0 +1,10 @@
+<div class="c-cate">
+  <h5>MIS CATEGORÍAS FAVORITAS</h5>
+  <div class="c-cate--list">
+    <p>Marcar categorías como favoritas mejorarará tus recomendaciones</p>
+  </div>
+  <h5>CATEGORÍAS</h5>
+  <ul class="c-cate--list">
+    <li *ngFor="let category of categories"><a href="#">{{category.attributes.title | translate}}</a></li>
+  </ul>
+</div>
